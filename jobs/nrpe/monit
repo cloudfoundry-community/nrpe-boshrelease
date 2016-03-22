@@ -1,0 +1,5 @@
+check process nrpe
+  with pidfile /var/vcap/sys/run/nrpe/nrpe.pid
+  start program "/var/vcap/jobs/nrpe/bin/monit_debugger nrpe_ctl '/var/vcap/jobs/nrpe/bin/ctl start'"
+  stop program "/var/vcap/jobs/nrpe/bin/monit_debugger nrpe_ctl '/var/vcap/jobs/nrpe/bin/ctl stop'"
+  group vcap

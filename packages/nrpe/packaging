@@ -1,0 +1,32 @@
+set -e # exit immediately if a simple command exits with a non-zero status
+set -u # report the usage of uninitialized variables
+
+# Detect # of CPUs so make jobs can be parallelized
+CPUS=$(grep -c ^processor /proc/cpuinfo)
+ # Available variables
+# $BOSH_COMPILE_TARGET - where this package & spec'd source files are available
+# $BOSH_INSTALL_TARGET - where you copy/install files to be included in package
+export HOME=/var/vcap
+
+# downloaded from: 
+# http://downloads.sourceforge.net/project/nagios/nrpe-2.x/nrpe-2.15/nrpe-2.15.tar.gz
+
+VERSION=2.15
+tar -xzf nrpe/nrpe-${VERSION}.tar.gz
+cd nrpe-${VERSION}
+
+# NB: nrpe's configure script does some very non-standard things to try
+#     to find libssl.so -- basically it walks a list of "known good"
+#     directories and looks for the library file explicitly.  Bad juju.
+#     To combat this (since /usr/lib/x86_64-linux is *not* in that list),
+#     we need to find libssl.so and use it's dirname as an explicit
+#     argument to ./configure.  Whew.
+libssl_so=$(find /usr/lib -name 'libssl.so' | head -n1)
+echo "Found libssl.so in $libssl_so"
+
+./configure --prefix ${BOSH_INSTALL_TARGET} \
+            --with-ssl-lib=$(dirname $libssl_so) \
+            --with-nagios-user=vcap --with-nagios-group=vcap \
+            --with-nrpe-user=vcap   --with-nrpe-group=vcap
+make all
+make install
