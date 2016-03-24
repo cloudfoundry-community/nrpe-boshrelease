@@ -16,6 +16,10 @@ jobs:
     persistent_disk: 0
     resource_pool: small_z1
     networks: (( param "please set nrpe networks" ))
+    properties:
+      nrpe:
+        checks:
+          nrpe-log: check_log -F /var/vcap/sys/log/nrpe/nrpe.log -O /tmp/nrpe.log -q ERROR
 
 networks: (( param "please set networks" ))
 
