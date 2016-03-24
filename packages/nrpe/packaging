@@ -13,7 +13,7 @@ export HOME=/var/vcap
 
 VERSION=2.15
 tar -xzf nrpe/nrpe-${VERSION}.tar.gz
-cd nrpe-${VERSION}
+pushd nrpe-${VERSION}
 
 # NB: nrpe's configure script does some very non-standard things to try
 #     to find libssl.so -- basically it walks a list of "known good"
@@ -30,3 +30,16 @@ echo "Found libssl.so in $libssl_so"
             --with-nrpe-user=vcap   --with-nrpe-group=vcap
 make all
 make install
+popd
+
+# downloaded from:
+# http://www.nagios-plugins.org/download/nagios-plugins-2.1.1.tar.gz
+
+VERSION=2.1.1
+tar -xzf nrpe/nagios-plugins-${VERSION}.tar.gz
+pushd nagios-plugins-${VERSION}
+
+./configure --prefix ${BOSH_INSTALL_TARGET}
+make
+make install
+popd

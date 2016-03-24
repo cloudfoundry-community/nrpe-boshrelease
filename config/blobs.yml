@@ -3,3 +3,7 @@ nrpe/nrpe-2.15.tar.gz:
   object_id: fab7f235-133d-403f-b901-ff8e493019f0
   sha: 45f434758c547c0af516e8b3324717f8dcd100a3
   size: 419695
+nrpe/nagios-plugins-2.1.1.tar.gz:
+  object_id: 27ee938b-f47c-48a0-9be8-2f53e478e6fd
+  sha: ce96d3c0fe05493b55f49646986eaa1347fa9cdb
+  size: 2677352
