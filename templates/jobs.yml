@@ -20,6 +20,8 @@ jobs:
       nrpe:
         checks:
           nrpe-log: check_log -F /var/vcap/sys/log/nrpe/nrpe.log -O /tmp/nrpe.log -q ERROR
+          cpu:      check_cpu
+          mem:      check_mem -w 20 -c 10
 
 networks: (( param "please set networks" ))
 

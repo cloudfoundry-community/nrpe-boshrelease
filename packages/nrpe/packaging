@@ -43,3 +43,12 @@ pushd nagios-plugins-${VERSION}
 make
 make install
 popd
+
+# install random add-on plugins
+
+pushd nrpe
+for check in check_*; do
+	cp $check  ${BOSH_INSTALL_TARGET}/libexec/$check
+	chmod 0755 ${BOSH_INSTALL_TARGET}/libexec/$check
+done
+popd

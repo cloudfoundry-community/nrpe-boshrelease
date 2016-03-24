@@ -4,3 +4,4 @@ dependencies: []
 files:
   - nrpe/nrpe-2.15.tar.gz
   - nrpe/nagios-plugins-2.1.1.tar.gz
+  - nrpe/check_*

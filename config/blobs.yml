@@ -7,3 +7,11 @@ nrpe/nagios-plugins-2.1.1.tar.gz:
   object_id: 27ee938b-f47c-48a0-9be8-2f53e478e6fd
   sha: ce96d3c0fe05493b55f49646986eaa1347fa9cdb
   size: 2677352
+nrpe/check_cpu:
+  object_id: 20a40582-753f-4dcc-8cc1-7c7c57910220
+  sha: 80fa066da11330e6a4725e035ff14c63a94f906a
+  size: 3771
+nrpe/check_mem:
+  object_id: 810a7252-3682-440f-8c38-91b14ddb4756
+  sha: 11525d4973b73550c48fabf136d9c588218d7d4a
+  size: 2528
