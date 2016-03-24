@@ -1,0 +1,20 @@
+---
+packages:
+- name: nrpe
+  version: ff564f65f0bba7219572fbd00e5e440288641d4c
+  fingerprint: ff564f65f0bba7219572fbd00e5e440288641d4c
+  sha1: 0c6bce29b8bbe595da784f9fa1471e30d1af985a
+  dependencies: []
+jobs:
+- name: nrpe
+  version: 58bc5ac01461985de0c519e43ccfbbae6c92480f
+  fingerprint: 58bc5ac01461985de0c519e43ccfbbae6c92480f
+  sha1: 6ba78b1cee8487326750057d1fc444e114d86c9b
+license:
+  version: ec16b6c95de5c9122dcf472815239a76d1b6c9ea
+  fingerprint: ec16b6c95de5c9122dcf472815239a76d1b6c9ea
+  sha1: 5b32381d58fafa5bc06598937c3461c5954c5e10
+commit_hash: c5cd4e1d
+uncommitted_changes: true
+name: nrpe
+version: '1'
