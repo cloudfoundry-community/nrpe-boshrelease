@@ -1,6 +1,6 @@
 ---
 meta:
-  name:    nrpe-boshrelease
+  name:    nrpe
   release: Nagios NRPE
   target:  sw
   url:     https://ci.vsphere.starkandwayne.com
